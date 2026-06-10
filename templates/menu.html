@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Menu Makanan</title>
+</head>
+<body>
+
+    <h2>DAFTAR MENU MAKANAN</h2>
+
+    <form action="/pesan" method="POST">
+
+        {% for item in menu %}
+
+        <p>
+            {{ item.nama_menu }}
+            - Rp{{ item.harga }}
+
+            <input type="number"
+                   name="qty_{{ item.id_menu }}"
+                   min="0">
+        </p>
+
+        {% endfor %}
+
+        <button type="submit">
+            Pesan
+        </button>
+
+    </form>
+
+
+    <br><br>
+
+    <form action="/" method="GET">
+        <button type="submit">Logout</button>
+    </form>
+
+</body>
+</html>

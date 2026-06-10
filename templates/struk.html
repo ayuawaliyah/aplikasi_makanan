@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Struk Pesanan</title>
+</head>
+<body>
+
+    <h2>STRUK PESANAN</h2>
+
+    {% for menu, qty in pesanan %}
+
+    <p>
+        {{ menu.nama_menu }}
+        x {{ qty }}
+        = Rp{{ menu.harga * qty }}
+    </p>
+
+    {% endfor %}
+
+    <hr>
+
+    <h3>
+        Total Bayar = Rp{{ total }}
+    </h3>
+
+    <br><br>
+
+    <form action="/" method="GET">
+        <button type="submit">Logout</button>
+    </form>
+
+</body>
+</html>
