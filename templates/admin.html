@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin</title>
+</head>
+<body>
+
+    <h2>HALAMAN ADMIN</h2>
+
+    <h3>Daftar Menu</h3>
+
+    {% for item in menu %}
+        <p>
+            {{ item.nama_menu }} - Rp{{ item.harga }}
+        </p>
+    {% endfor %}
+
+    <hr>
+
+    <h3>Tambah Menu</h3>
+
+    <form action="/tambah_menu" method="POST">
+        Nama Menu:
+        <input type="text" name="nama" required>
+
+        <br><br>
+
+        Harga:
+        <input type="number" name="harga" required>
+
+        <br><br>
+
+        <button type="submit">Tambah</button>
+    </form>
+
+    <br><br>
+
+    <form action="/" method="GET">
+        <button type="submit">Logout</button>
+    </form>
+
+</body>
+</html>
